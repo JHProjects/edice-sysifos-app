@@ -57,6 +57,25 @@ h1 {
 	letter-spacing: -.035em;
 }
 
+h2 {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	margin: 20px auto;
+	text-align-last: center;
+	font-size: 1.45rem;
+	font-weight: 900;
+}
+
+h2 span:hover {
+	text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+	color: #FFF;
+	mix-blend-mode:darken;
+}
+
+
 @keyframes rotate {
 	from {}
 	15% {transform: rotateY(50deg)}
