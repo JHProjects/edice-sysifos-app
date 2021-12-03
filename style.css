@@ -47,10 +47,14 @@ img {
 	animation: rotate-steady 8s 2s infinite;
 	transform-style: preserve-3d;
 	transform: perspective(4cm);
+	mix-blend-mode: overlay;
 }
 
 .animation {
 	animation: rotate-randomly 10s infinite ease-in-out;
+	transition: 5s;
+	mix-blend-mode: saturation;
+
 }
 
 h1 {
