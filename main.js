@@ -1,8 +1,14 @@
 let img = document.querySelector("img")
 let container = document.querySelector(".container")
-let bookName = document.querySelector("h2 span")
-img.addEventListener("click", ez)
-bookName.addEventListener("click", openContainer)
+let bookNames = document.querySelector(".book-names")
+let popUp = {}
+
+let infoArray = []
+container.childNodes.forEach((e) => {
+	if (e.tagName == "P") {
+		infoArray.push(e)
+	}
+})
 
 
 function ez() {
@@ -17,17 +23,39 @@ function ez() {
 	}
 }
 
-let data = {}
-function openContainer(e) {
-	if (!container.classList.contains("container-open")) {
-		container.classList.add("container-open")
-		data.name = e.target.textContent
-		console.log(e.target.textContent)
-		e.target.innerHTML = "hello from main.js"
-	} else {
-		container.classList.remove("container-open")
-		e.target.innerHTML = data.name
+
+
+function engage(e) {
+	if (e.target.tagName == "SPAN") {
+		if (!container.classList.contains("container-open")) {
+			openContainer(e.target)
+		} else if (e.target.dataset.bookIndex !== popUp.currentIndex) {
+			closeContainer()
+			let pause = setTimeout(() => {
+				openContainer(e.target)
+			}, 200)
+			//console.log("different book clicked!")	
+		} else {closeContainer()}
 	}
-	
-	
 }
+
+
+function openContainer(t) {
+	popUp.current = t
+	popUp.currentIndex = t.dataset.bookIndex
+	popUp.currentParagraph = infoArray[popUp.currentIndex - 1]
+	popUp.currentParagraph.classList.add("info-active")
+	popUp.current.classList.add("active-book-name")
+	container.classList.add("container-open")
+}
+
+function closeContainer(t) {
+	popUp.currentParagraph.classList.remove("info-active")
+	popUp.current.classList.remove("active-book-name")
+	container.classList.remove("container-open")
+}
+
+
+
+img.addEventListener("click", ez)
+bookNames.addEventListener("click", engage)
