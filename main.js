@@ -1,4 +1,5 @@
 let img = document.querySelector("img")
+let closeBtn = document.querySelector(".close-btn")
 let container = document.querySelector(".container")
 let bookNames = document.querySelector(".book-names")
 let popUp = {}
@@ -66,3 +67,4 @@ function closeContainer(t) {
 
 img.addEventListener("click", ez)
 bookNames.addEventListener("click", engage)
+closeBtn.addEventListener("click", closeContainer)
