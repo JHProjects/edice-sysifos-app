@@ -46,11 +46,13 @@ main {
 	align-content: center;
 }
 
-img {
+.big-logo {
 	max-height: 1000px;
 	padding: 0 0 100px 10px;
 	margin: auto;
-	animation: rotate-steady 8s 2s infinite;
+	animation: 
+		rotate-steady 8s 2s infinite,
+		size-up 1.25s ease-in-out;
 	transform-style: preserve-3d;
 	transform: perspective(4cm);
 	mix-blend-mode: overlay;
@@ -104,11 +106,12 @@ h2 span:hover {
 
 p {
 	color: #FFF;
-	margin: 2rem auto;
+	margin: 2rem  2rem 2rem clamp(2rem, 5vw, 3.6rem);
 	width: 87%;
 	max-width: 600px;
+	min-width: 300px;
 	display: none;
-	font-family: acumin-pro, sans-serif;
+	font-family: Lora, sans-serif;
 	font-size: .95rem;
 	font-weight: 400;
 	line-height: 1.25rem;
@@ -118,14 +121,43 @@ p {
 p span {
 	font-family: acumin-pro-wide;
 	font-weight: 800;
-	font-size: 1.6rem;
+}
+
+.book-title {
+	font-size: 1.9rem;
 	line-height: 1.3rem;
 	letter-spacing: -0.08;
 }
 
+.book-author {
+	font-family: acumin-pro, sans-serif;
+	font-size: 1.4rem;
+	line-height: 1.3rem;
+	letter-spacing: -0.08;
+}
+
+.imgs {
+	display: flex;
+	flex-direction: column;
+	display: none;
+	width: 80%;
+	max-width: 400px;
+	margin: 2.5rem auto 5rem auto;
+	gap: 2rem;
+}
+
+.imgs-active {
+	display: flex;
+}
+
 .container {
-	overflow: scroll;
+	overflow-y: scroll;
 	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: start;
+	justify-items: space-between;
 	top: 0;
 	bottom: 4vh;
 	left: 0;
@@ -176,4 +208,10 @@ p span {
 @keyframes rotate-steady {
 	0% {transform: rotateY(0deg)}
 	100% {transform: rotateY(1turn)}
+}
+
+@keyframes size-up {
+	from {opacity: 0; transform: scale(.1)}
+	35% {opacity: 0; transform: scale(.1)}
+	to {opacity: 1; transform: scale(1)}
 }

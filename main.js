@@ -3,10 +3,14 @@ let container = document.querySelector(".container")
 let bookNames = document.querySelector(".book-names")
 let popUp = {}
 
-let infoArray = []
+let infoTexts = []
+let infoImgs = []
 container.childNodes.forEach((e) => {
 	if (e.tagName == "P") {
-		infoArray.push(e)
+		infoTexts.push(e)
+	}
+	if (e.tagName == "DIV") {
+		infoImgs.push(e)
 	}
 })
 
@@ -43,13 +47,16 @@ function engage(e) {
 function openContainer(t) {
 	popUp.current = t
 	popUp.currentIndex = t.dataset.bookIndex
-	popUp.currentParagraph = infoArray[popUp.currentIndex - 1]
+	popUp.currentParagraph = infoTexts[popUp.currentIndex - 1]
+	popUp.currentImgs = infoImgs[popUp.currentIndex - 1]
+	popUp.currentImgs.classList.add("imgs-active")
 	popUp.currentParagraph.classList.add("info-active")
 	popUp.current.classList.add("active-book-name")
 	container.classList.add("container-open")
 }
 
 function closeContainer(t) {
+	popUp.currentImgs.classList.remove("imgs-active")
 	popUp.currentParagraph.classList.remove("info-active")
 	popUp.current.classList.remove("active-book-name")
 	container.classList.remove("container-open")
