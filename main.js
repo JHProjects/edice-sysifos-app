@@ -1,8 +1,11 @@
 let img = document.querySelector("img")
 let closeBtn = document.querySelector(".close-btn")
-let container = document.querySelector(".container")
+let container = document.querySelector("#container")
+let posterContainer = document.querySelector("#poster-container")
 let bookNames = document.querySelector(".book-names")
 let popUp = {}
+
+posterContainer.innerHTML = "hello"
 
 let infoTexts = []
 let infoImgs = []
@@ -67,4 +70,5 @@ function closeContainer(t) {
 
 img.addEventListener("click", ez)
 bookNames.addEventListener("click", engage)
+posterBtn.addEventListener("click", )
 closeBtn.addEventListener("click", closeContainer)

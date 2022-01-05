@@ -30,19 +30,21 @@ html {
 	font-family: acumin-pro-wide, sans-serif;
 	font-weight: 800;
 	background: var(--gradient);
-	background-size: 30000%;
+	background-repeat: no-repeat;
+	background-size: 20000%;
 	animation: gradient-animation 100s infinite;
 }
 
 body {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 main {
-	height: 100vh;
+	min-height: 100vh;
 	width: clamp(260px, 80%, 900px);
 	margin: 0 auto;
 	display: flex;
+	flex-direction: column;
 	align-content: center;
 }
 
@@ -195,6 +197,35 @@ p span {
 
 .info-active {
 	display: block;
+}
+
+
+/* poster section */
+.posters {
+	min-height: 300px;
+	width: 70%;
+	margin: 150px auto 350px auto;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	gap: 125px 75px;
+}
+
+.posters img {
+	margin:0 auto;
+	width: 81%;
+	max-width: 700px;
+}
+
+/* footer */
+footer {
+	margin-left: 30px;
+	position: relative;
+	bottom: 0;
+}
+
+footer p {
+	margin: 0;
 }
 
 
