@@ -70,5 +70,4 @@ function closeContainer(t) {
 
 img.addEventListener("click", ez)
 bookNames.addEventListener("click", engage)
-posterBtn.addEventListener("click", )
 closeBtn.addEventListener("click", closeContainer)

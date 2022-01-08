@@ -53,8 +53,11 @@ main {
 	padding: 0 0 100px 10px;
 	margin: auto;
 	animation: 
-		rotate-steady 8s 2s infinite,
-		size-up 1.25s ease-in-out;
+		rotate-steady 8s 2s infinite;
+		/* size-up 1.25s ease-in-out */ 
+	-moz-animation: 
+		rotate-steady 8s 2s infinite;
+		/* size-up 1.25s ease-in-out */ 
 	transform-style: preserve-3d;
 	transform: perspective(4cm);
 	mix-blend-mode: overlay;
