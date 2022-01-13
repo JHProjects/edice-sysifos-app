@@ -203,21 +203,32 @@ p span {
 }
 
 
-/* poster section */
-.posters {
+/* poster / book section */
+.posters, .book {
 	min-height: 300px;
 	width: 70%;
-	margin: 150px auto 350px auto;
+	margin: 0 auto 75px auto;
 	display: grid;
 	justify-content: center;
-	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
 	gap: 125px 75px;
 }
 
-.posters img {
+.book {
+	gap: 75px 75px;
+}
+
+.posters img, .book img {
 	margin:0 auto;
 	width: 81%;
 	max-width: 700px;
+}
+
+h3 {
+	font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+	margin: 125px auto 20px auto;
+	width: 70%;
+	min-width: 400px;
 }
 
 /* footer */
